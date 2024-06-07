@@ -1,6 +1,6 @@
 # Task Manager
 Jedná se o ukázkový projekt. V programu lze nastavit úkoly uživatelům a poté úkol označit za splněný či ho smazat.
-Aplikace je napsaná v C# .NET 8 ASP MVC.
+Aplikace je napsaná v C# .NET 8 ASP MVC a využívá prvky Blazor frameworku, na design stránky se využil Bootstrap.
 ## Složky
 `wwwroot\js\` - JavaScript soubory
 `Models\Context\` - třídy pro ukládání dat
