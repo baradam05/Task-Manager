@@ -2,7 +2,7 @@
 Jedná se o ukázkový projekt. V programu lze nastavit úkoly uživatelům a poté úkol označit za splněný či ho smazat.
 Aplikace je napsaná v C# .NET 8 ASP MVC a využívá prvky Blazor frameworku, na design stránky se využil Bootstrap.
 ## Složky
-`wwwroot\js\` - JavaScript soubory
+`wwwroot\js\` - JavaScript soubory\n
 `Models\Context\` - třídy pro ukládání dat
 `Models\DbModel` - modelové třídy pro databázi
 `Models\Dto` - data transfer třídy
