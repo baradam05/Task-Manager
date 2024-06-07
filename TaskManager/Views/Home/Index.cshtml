@@ -1,0 +1,130 @@
+﻿@using TaskManager.Models.Dto
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model FilterDto
+
+<div class="d-flex justify-content-between align-items-center mb-2">
+    <div class="d-flex align-items-center">
+        <h3 class="mb-0">Tasks</h3>
+        <div class="ms-2 text-muted d-flex align-items-center" style="font-size: smaller;">
+            filter
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="filterBtn bi bi-chevron-down ms-1" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="filterBtn d-none bi bi-chevron-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z" />
+            </svg>
+        </div>
+    </div>
+    <a class="btn btn-primary" asp-controller="Task" asp-action="Create">Assign Task</a>
+</div>
+
+<form asp-action="Index" id="filter" class="p-3 d-none mb-3 border rounded">
+    <div class="form-check">
+        <input asp-for="Overdue" type="checkbox" class="form-check-input" id="overdueCheckbox">
+        <label class="form-check-label" for="overdueCheckbox">Overdue</label>
+    </div>
+    <div class="form-check">
+        <input asp-for="Intime" type="checkbox" class="form-check-input" id="todoCheckbox">
+        <label class="form-check-label" for="todoCheckbox">TODO</label>
+    </div>
+    <div class="form-group mt-2">
+        <label for="orderBySelect">Order by</label>
+        <select asp-for="OrderBy" class="form-select" id="orderBySelect">
+            <option value="Name">Name</option>
+            <option value="Start">Start date</option>
+            <option value="End">End date</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <select asp-for="OrderType" class="form-select" id="orderBySelect">
+            <option value="Ascending">Ascending</option>
+            <option value="Descending">Descending</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Filter</button>
+</form>
+
+@{
+    List<TaskDto> Tasks = this.ViewBag.Tasks;
+
+    if (Tasks.Count == 0)
+    {
+        <div>No Tasks</div>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">Name</th>
+                    <th scope="col">Assigment</th>
+                    <th scope="col">Assigned by</th>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (TaskDto task in Tasks)
+                {
+                    <tr class="@(task.To < DateTime.Now ? "table-danger" : "")">
+                        <td>@task.Name</td>
+                        <td>@task.Assigment</td>
+                        <td>@task.Assignedby</td>
+                        <td>@task.From</td>
+                        <td>@task.To</td>
+                        <td>
+                            <a asp-controller="Task" asp-action="FinishTask" asp-route-id="@task.Id" class="btn btn-primary">FINISHED</a>
+                            <a asp-controller="Task" asp-action="Delete" asp-route-id="@task.Id" class="btn btn-danger">DELETE</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+
+<h3>Finished</h3>
+@{
+    List<TaskDto> finishedTasks = this.ViewBag.FinishedTasks;
+
+    if (finishedTasks.Count == 0)
+    {
+        <div>No finished Tasks</div>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">Name</th>
+                    <th scope="col">Assigment</th>
+                    <th scope="col">Assigned by</th>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (TaskDto task in finishedTasks)
+                {
+                    <tr>
+                        <td>@task.Name</td>
+                        <td>@task.Assigment</td>
+                        <td>@task.Assignedby</td>
+                        <td>@task.From</td>
+                        <td>@task.To</td>
+                        <td>
+                            <a asp-controller="Task" asp-action="Delete" asp-route-id="@task.Id" class="btn btn-danger">DELETE</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+
+<script src="~/js/filter.js"></script>

@@ -1,0 +1,105 @@
+{
+  "User": [
+    {
+      "Id": 1,
+      "Username": "Josef1",
+      "Password": "Silneheslo"
+    },
+    {
+      "Id": 2,
+      "Username": "Jan2",
+      "Password": "Bezpecneheslo"
+    }
+  ],
+  "Tasks": [
+    {
+      "Id": 1,
+      "AssignedBy": 1,
+      "Name": "Upravit webovou str\u00E1nku",
+      "Assigment": "Aktualizace obsahu a optimalizace pro vyhled\u00E1va\u010De",
+      "Finished": null,
+      "StartDate": "2024-06-04T08:00:00",
+      "EndDate": "2024-06-04T09:00:00"
+    },
+    {
+      "Id": 2,
+      "AssignedBy": 1,
+      "Name": "Vytvo\u0159it prezentaci",
+      "Assigment": "P\u0159\u00EDprava vizu\u00E1ln\u011B atraktivn\u00ED prezentace s d\u016Frazem na kl\u00ED\u010Dov\u00E9 body",
+      "Finished": null,
+      "StartDate": "2024-06-29T08:00:00",
+      "EndDate": "2024-06-30T08:00:00"
+    },
+    {
+      "Id": 3,
+      "AssignedBy": 1,
+      "Name": "Zpracovat datov\u00FD report",
+      "Assigment": "Analyzovat a vizualizovat data z posledn\u00EDho \u010Dtvrtlet\u00ED pro management",
+      "Finished": "2024-06-03T23:14:53.6605541+02:00",
+      "StartDate": "2024-06-01T12:00:00",
+      "EndDate": "2024-06-01T12:30:00"
+    },
+    {
+      "Id": 4,
+      "AssignedBy": 1,
+      "Name": "Organizovat workshop",
+      "Assigment": "Pl\u00E1nov\u00E1n\u00ED a moderov\u00E1n\u00ED interaktivn\u00EDho workshopu zam\u011B\u0159en\u00E9ho na rozvoj dovednost\u00ED t\u00FDmu",
+      "Finished": null,
+      "StartDate": "2024-06-04T09:00:00",
+      "EndDate": "2024-06-04T13:30:00"
+    },
+    {
+      "Id": 5,
+      "AssignedBy": 1,
+      "Name": "Zajistit logistiku",
+      "Assigment": "Koordinace a rezervace prostor, dopravy a dal\u0161\u00EDch pot\u0159ebn\u00FDch zdroj\u016F pro nadch\u00E1zej\u00EDc\u00ED akci",
+      "Finished": null,
+      "StartDate": "2024-06-30T08:00:00",
+      "EndDate": "2024-06-30T13:30:00"
+    },
+    {
+      "Id": 6,
+      "AssignedBy": 1,
+      "Name": "Prov\u011B\u0159it bezpe\u010Dnostn\u00ED opat\u0159en\u00ED",
+      "Assigment": "Revize a aktualizace bezpe\u010Dnostn\u00EDch protokol\u016F a opat\u0159en\u00ED v souladu s aktu\u00E1ln\u00EDmi standardy",
+      "Finished": "2024-06-03T23:17:19.6753283+02:00",
+      "StartDate": "2024-05-31T08:00:00",
+      "EndDate": "2024-06-01T13:30:00"
+    }
+  ],
+  "UserTask": [
+    {
+      "UserId": 1,
+      "TaskId": 1
+    },
+    {
+      "UserId": 1,
+      "TaskId": 2
+    },
+    {
+      "UserId": 1,
+      "TaskId": 3
+    },
+    {
+      "UserId": 2,
+      "TaskId": 3
+    },
+    {
+      "UserId": 2,
+      "TaskId": 5
+    },
+    {
+      "UserId": 2,
+      "TaskId": 6
+    }
+  ],
+  "settings": {
+    "Context": null,
+    "JsPath": "C:\\Users\\Uzivatel\\Documents",
+    "DbServer": null,
+    "DbDatabase": null,
+    "DbUser": null,
+    "DbPassword": null,
+    "autoIncrement": 7
+  }
+}

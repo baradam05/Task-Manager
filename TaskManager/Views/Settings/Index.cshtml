@@ -1,0 +1,39 @@
+﻿@using TaskManager.Models.DbModel;
+@model Settings;
+
+<h1>Settings</h1>
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary"><</a>
+
+<form asp-action="Index" method="post">
+    <div class="row mt-3">
+        <div class="col">
+            <div class="form-group">
+                <input asp-for="Context" value="localRadio" type="radio" id="localRadio" name="Context" class="form-check-input" checked />
+                <label for="localRadio" class="form-check-label">Local</label>
+                <hr>
+                <label for="localPath">Local path</label>
+                <input asp-for="JsPath" type="text" id="localPath" class="form-control" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <input asp-for="Context" value="dbRadio" type="radio" id="dbRadio" name="Context" class="form-check-input" />
+                <label for="dbRadio" class="form-check-label">Database</label>
+                <hr>
+                <label for="serverName">Server name</label>
+                <input asp-for="DbServer" type="text" class="form-control dbSettings" readonly />
+                <label for="dbName">Database name</label>
+                <input asp-for="DbDatabase" type="text" class="form-control dbSettings" readonly />
+                <label for="dbUser">Database user</label>
+                <input asp-for="DbUser" type="text" class="form-control dbSettings" readonly />
+                <label for="dbPassword">Database password</label>
+                <input asp-for="DbPassword" type="password" class="form-control dbSettings" readonly />
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+
+<script src="~/js/settings.js"></script>
+
